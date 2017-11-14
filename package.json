@@ -4,7 +4,7 @@
   "description": "A stable alternative to [semantic-release][]. Only handles NPM publishing and nothing more. For creating GitHub releases use the Semantic Release GitHub App",
   "repository": "tunnckoCore/new-release",
   "author": "Charlike Mike Reagent (https://i.am.charlike.online)",
-  "nspId": "todo",
+  "nspId": "12907c4a-78a2-41d7-a430-49396e68b9cd",
   "main": "./src/index.js",
   "scripts": {
     "test": "NODE_ENV=test yarn hela test",
@@ -63,6 +63,9 @@
     "lint": {
       "reflinks": true
     },
-    "reflinks": []
+    "reflinks": [
+      "hela",
+      "semantic-release"
+    ]
   }
 }
