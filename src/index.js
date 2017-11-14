@@ -10,23 +10,23 @@ const getPkg = require('get-pkg')
 const parseGitLog = require('parse-git-log')
 const detectNext = require('detect-next-version')
 
-module.exports = async function newRelease (cwd) {
-  const commits = await parseGitLog.promise(cwd)
+module.exports = async function newRelease (dir) {
+  const commits = await parseGitLog.promise(dir)
 
   // TODO: respect all commits after the last tag,
   // not only the latest one (in some cases it is need!)
-  const lastCommit = commits[0]
-  const commit = detectNext(lastCommit.message, true)
+  const { message, cwd } = commits[0]
+  const { increment } = detectNext(message, true)
 
-  if (!commit.increment) return null
+  if (!increment) return null
 
-  return getNextVersion(commit, lastCommit)
+  return getNextVersion(increment, cwd)
 }
 
-async function getNextVersion (commit, { cwd }) {
+async function getNextVersion (increment, cwd) {
   const name = path.basename(cwd)
   const pkgJson = await util.promisify(getPkg)(name)
   const currentVersion = pkgJson.version
 
-  return semver.inc(currentVersion, commit.increment)
+  return semver.inc(currentVersion, increment)
 }
