@@ -7,15 +7,18 @@ const path = require('path')
 const util = require('util')
 const semver = require('semver')
 const getPkg = require('get-pkg')
+const { shell } = require('execa-pro')
 const parseGitLog = require('parse-git-log')
 const detectNext = require('detect-next-version')
+
+module.exports = { prepublish, publish }
 
 /**
  *
  * @param {*} dir
  */
 
-module.exports = async function newRelease (dir) {
+async function prepublish (dir) {
   const commits = await parseGitLog.promise(dir)
 
   // TODO: respect all commits after the last tag,
@@ -41,4 +44,16 @@ async function getNextVersion (increment, cwd) {
   const nextVersion = semver.inc(currentVersion, increment)
 
   return { currentVersion, nextVersion }
+}
+
+/**
+ *
+ * @param {*} nextVersion
+ */
+
+function publish (nextVersion) {
+  return shell([
+    `yarn version --no-git-tag-version --new-version ${nextVersion}`,
+    `${path.join(__dirname, 'npmpubli.sh')}`,
+  ])
 }

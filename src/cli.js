@@ -5,18 +5,16 @@
  * @license Apache-2.0
  */
 
-const path = require('path')
-const { shell } = require('execa-pro')
-const newRelease = require('./index.js')
+const { prepublish, publish } = require('./index.js')
 
-async function init () {
-  const cwd = process.cwd()
-  const { nextVersion } = newRelease(cwd)
+const cwd = process.cwd()
 
-  await shell([
-    `yarn version --no-git-tag-version --new-version ${nextVersion}`,
-    `${path.join(__dirname, 'publisher.sh')}`,
-  ])
-}
+prepublish(cwd)
+  .then(({ nextVersion }) => publish(nextVersion))
+  .catch((er) => {
+    /* eslint-disable no-console */
+    console.error('new-release error!')
+    console.error(er.stack)
 
-init()
+    process.exit(1)
+  })

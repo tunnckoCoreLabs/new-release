@@ -4,9 +4,10 @@
  */
 
 const test = require('mukla')
-const newRelease = require('../src/index.js')
+const { prepublish, publish } = require('../src/index.js')
 
-test('exports a function', (done) => {
-  test.strictEqual(typeof newRelease, 'function')
+test('exports an object with "publish" and "prepublish" funciotions', (done) => {
+  test.strictEqual(typeof prepublish, 'function')
+  test.strictEqual(typeof publish, 'function')
   done()
 })
