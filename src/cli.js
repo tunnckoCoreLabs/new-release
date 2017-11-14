@@ -11,7 +11,7 @@ const newRelease = require('./index.js')
 
 async function init () {
   const cwd = process.cwd()
-  const { currentVersion, nextVersion } = newRelease(cwd)
+  const { nextVersion } = newRelease(cwd)
 
   await shell([
     `yarn version --no-git-tag-version --new-version ${nextVersion}`,
