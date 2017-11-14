@@ -8,5 +8,3 @@ if [ "$CIRCLECI" = "true" ]; then
   echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
   npm publish --registry ${NPM_REGISTRY:-"https://registry.npmjs.org/"}
 fi;
-
-

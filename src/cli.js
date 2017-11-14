@@ -13,8 +13,6 @@ async function init () {
   const cwd = process.cwd()
   const { currentVersion, nextVersion } = newRelease(cwd)
 
-  console.log('current version is', currentVersion)
-
   await shell([
     `yarn version --no-git-tag-version --new-version ${nextVersion}`,
     `${path.join(__dirname, 'publisher.sh')}`,
