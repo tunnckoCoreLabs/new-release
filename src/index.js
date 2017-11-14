@@ -27,6 +27,7 @@ async function getNextVersion (increment, cwd) {
   const name = path.basename(cwd)
   const pkgJson = await util.promisify(getPkg)(name)
   const currentVersion = pkgJson.version
+  const nextVersion = semver.inc(currentVersion, increment)
 
-  return semver.inc(currentVersion, increment)
+  return { currentVersion, nextVersion }
 }
