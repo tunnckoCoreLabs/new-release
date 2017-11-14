@@ -10,6 +10,11 @@ const getPkg = require('get-pkg')
 const parseGitLog = require('parse-git-log')
 const detectNext = require('detect-next-version')
 
+/**
+ *
+ * @param {*} dir
+ */
+
 module.exports = async function newRelease (dir) {
   const commits = await parseGitLog.promise(dir)
 
@@ -22,6 +27,12 @@ module.exports = async function newRelease (dir) {
 
   return getNextVersion(increment, cwd)
 }
+
+/**
+ *
+ * @param {*} increment
+ * @param {*} cwd
+ */
 
 async function getNextVersion (increment, cwd) {
   const name = path.basename(cwd)
