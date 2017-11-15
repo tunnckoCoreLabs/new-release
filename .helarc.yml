@@ -1,5 +1,1 @@
 extends: tunnckocore
-tasks:
-  release:
-    - yarn link
-    - new-release
