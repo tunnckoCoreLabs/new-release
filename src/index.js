@@ -22,8 +22,8 @@ async function prepublish (dir) {
 
   // TODO: respect all commits after the last tag,
   // not only the latest one (in some cases it is need!)
-  const { message, cwd } = commits[0]
-  const { increment } = detectNext(message, true)
+  const { contents, cwd } = commits[0]
+  const { increment } = detectNext(contents, true)
 
   if (!increment) return null
 
