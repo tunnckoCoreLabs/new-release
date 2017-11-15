@@ -19,3 +19,11 @@ prepublish(cwd)
 
     process.exit(1)
   })
+  .then((result) => {
+    if (result === true) {
+      console.log('skip npm publishing')
+    } else {
+      console.log('published sucessfully')
+    }
+    process.exit(0)
+  })
