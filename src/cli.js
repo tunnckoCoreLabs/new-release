@@ -5,14 +5,15 @@
  * @license Apache-2.0
  */
 
+/* eslint-disable no-console */
+
 const { prepublish, publish } = require('./index.js')
 
 const cwd = process.cwd()
 
 prepublish(cwd)
-  .then(({ nextVersion }) => publish(nextVersion))
+  .then((versions) => (versions ? publish(versions.nextVersion) : true))
   .catch((er) => {
-    /* eslint-disable no-console */
     console.error('new-release error!')
     console.error(er.stack)
 
