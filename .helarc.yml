@@ -1,3 +1,5 @@
 extends: tunnckocore
 tasks:
-  release: new-release
+  release:
+    - yarn link
+    - new-release
