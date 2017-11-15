@@ -7,11 +7,23 @@
 
 /* eslint-disable no-console */
 
+const isCI = require('is-ci')
+const minimist = require('minimist')
 const { prepublish, publish } = require('./index.js')
 
-const cwd = process.cwd()
+const argv = minimist(process.argv.slice(2), {
+  default: {
+    cwd: process.cwd(),
+    ci: false,
+  },
+})
 
-prepublish(cwd)
+if (argv.ci && !isCI) {
+  console.error('Publishing is only allowed on CI service!')
+  process.exit(1)
+}
+
+prepublish(argv.cwd)
   .then((versions) => (versions ? publish(versions.nextVersion) : true))
   .catch((er) => {
     console.error('new-release error!')
