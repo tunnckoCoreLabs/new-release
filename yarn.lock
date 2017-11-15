@@ -1229,12 +1229,6 @@ get-installed-path@^4.0.5:
   dependencies:
     global-modules "1.0.0"
 
-get-pkg@0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/get-pkg/-/get-pkg-0.3.0.tgz#79d9d89211eaa4e2e54000ad25ef9eb3635f16e7"
-  dependencies:
-    min-request "^1.4.1"
-
 get-stdin@^5.0.1:
   version "5.0.1"
   resolved "https://registry.yarnpkg.com/get-stdin/-/get-stdin-5.0.1.tgz#122e161591e21ff4c52530305693f20e6393a398"
@@ -1398,18 +1392,16 @@ hawk@~6.0.2:
     hoek "4.x.x"
     sntp "2.x.x"
 
-hela-config-tunnckocore@2.1.2:
-  version "2.1.2"
-  resolved "https://registry.yarnpkg.com/hela-config-tunnckocore/-/hela-config-tunnckocore-2.1.2.tgz#7b8eef8faef7c9b822b292a1a50162b8749be070"
+hela-config-tunnckocore@2.2.1:
+  version "2.2.1"
+  resolved "https://registry.yarnpkg.com/hela-config-tunnckocore/-/hela-config-tunnckocore-2.2.1.tgz#28df0e18432732d402fabaaeee6b06fbf2f66c8f"
   dependencies:
     all-contributors-cli "4.8.1"
-    detect-next-version "1.1.3"
-    get-pkg "0.3.0"
     gitcommit "0.2.4"
     hela "1.3.14"
     is-ci "1.0.10"
+    new-release "2.1.1"
     nyc "11.3.0"
-    parse-git-log "0.2.1"
     prettier "1.8.2"
     prettier-eslint "8.2.1"
     prettier-eslint-cli "4.4.0"
@@ -2054,10 +2046,6 @@ mimic-fn@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/mimic-fn/-/mimic-fn-1.1.0.tgz#e667783d92e89dbd342818b5230b9d62a672ad18"
 
-min-request@^1.4.1:
-  version "1.4.1"
-  resolved "https://registry.yarnpkg.com/min-request/-/min-request-1.4.1.tgz#17634cfb433600d3db3800c697bb696eef8589d2"
-
 minimatch@^3.0.2, minimatch@^3.0.3, minimatch@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
@@ -2109,6 +2097,16 @@ mute-stream@0.0.7:
 natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
+
+new-release@2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/new-release/-/new-release-2.1.1.tgz#724864a8b806e7f95c5cbf9c0232ae074517eb75"
+  dependencies:
+    detect-next-version "1.1.3"
+    execa-pro "1.0.2"
+    latest-version "3.1.0"
+    parse-git-log "0.2.1"
+    semver "5.4.1"
 
 node-fetch@^1.0.1:
   version "1.7.3"

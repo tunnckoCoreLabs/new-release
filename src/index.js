@@ -50,8 +50,11 @@ async function getNextVersion (increment, cwd) {
  */
 
 function publish (nextVersion) {
-  return shell([
-    `yarn version --no-git-tag-version --new-version ${nextVersion}`,
-    `${path.join(__dirname, 'npmpubli.sh')}`,
-  ])
+  return shell(
+    [
+      `yarn version --no-git-tag-version --new-version ${nextVersion}`,
+      `${path.join(__dirname, 'npmpubli.sh')}`,
+    ],
+    { stdio: 'inherit', preferLocal: true }
+  )
 }
