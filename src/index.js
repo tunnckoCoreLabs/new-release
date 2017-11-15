@@ -4,9 +4,8 @@
  */
 
 const path = require('path')
-const util = require('util')
 const semver = require('semver')
-const getPkg = require('get-pkg')
+const latestVersion = require('latest-version')
 const { shell } = require('execa-pro')
 const parseGitLog = require('parse-git-log')
 const detectNext = require('detect-next-version')
@@ -39,8 +38,7 @@ async function prepublish (dir) {
 
 async function getNextVersion (increment, cwd) {
   const name = path.basename(cwd)
-  const pkgJson = await util.promisify(getPkg)(name)
-  const currentVersion = pkgJson.version
+  const currentVersion = await latestVersion(name)
   const nextVersion = semver.inc(currentVersion, increment)
 
   return { currentVersion, nextVersion }
