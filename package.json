@@ -28,7 +28,7 @@
   "dependencies": {
     "detect-next-version": "1.1.5",
     "execa-pro": "1.0.2",
-    "is-ci": "1.0.10",
+    "is-ci": "1.1.0",
     "latest-version": "3.1.0",
     "minimist": "1.2.0",
     "parse-git-log": "0.2.1",
