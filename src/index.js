@@ -26,7 +26,7 @@ async function readCwdPackage (cwd) {
       if (e) {
         reject(e)
       } else {
-        resolve(JSON.parse(res))
+        resolve(res)
       }
     })
   })
@@ -55,7 +55,7 @@ async function prepublish (dir) {
  * @param {string} cwd
  */
 async function getNextVersion (increment, cwd) {
-  const { name } = await readCwdPackage(cwd)
+  const { name } = await readCwdPackage(cwd).then(JSON.parse)
   const currentVersion = await latestVersion(name)
   const nextVersion = semver.inc(currentVersion, increment)
 
