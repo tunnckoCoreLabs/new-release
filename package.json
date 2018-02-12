@@ -10,7 +10,8 @@
     "test": "NODE_ENV=test yarn hela test",
     "precommit": "yarn hela precommit",
     "commit": "yarn hela commit",
-    "prepublishOnly": "yarn hela protect"
+    "prepublishOnly": "yarn hela protect",
+    "release": "./src/cli.js --ci"
   },
   "license": "Apache-2.0",
   "licenseStart": 2017,
