@@ -55,22 +55,18 @@
     lodash "^4.2.0"
     to-fast-properties "^2.0.0"
 
-"@std/esm@0.11.3":
-  version "0.11.3"
-  resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.11.3.tgz#78afd0edb3546e36e68e73d0128cf930e4817606"
+"@std/esm@^0.20.0":
+  version "0.20.0"
+  resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.20.0.tgz#658cb32e3b163f20b7d9f29a78987041068b1182"
 
-"@std/esm@0.12.0":
-  version "0.12.0"
-  resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.12.0.tgz#d33b83e35e6854c94ac8840716c516b6f9b3cde2"
-
-"@tunnckocore/pretty-config@0.2.2":
-  version "0.2.2"
-  resolved "https://registry.yarnpkg.com/@tunnckocore/pretty-config/-/pretty-config-0.2.2.tgz#19cba311b6d9ebc536947acf7e8544368870c612"
+"@tunnckocore/pretty-config@0.5.1":
+  version "0.5.1"
+  resolved "https://registry.yarnpkg.com/@tunnckocore/pretty-config/-/pretty-config-0.5.1.tgz#e8cc45cf28ec5c74245f857ae317955d483a2879"
   dependencies:
-    "@std/esm" "0.11.3"
-    isobject "3.0.1"
-    js-yaml "3.10.0"
-    pify "3.0.0"
+    "@std/esm" "^0.20.0"
+    js-yaml "^3.10.0"
+    json-6 "^0.1.128"
+    pify "^3.0.0"
 
 abbrev@1:
   version "1.1.1"
@@ -221,11 +217,11 @@ array-unique@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/array-unique/-/array-unique-0.2.1.tgz#a1d97ccafcbc2625cc70fadceb36a50c58b01a53"
 
-arrayify@^1.0.0:
+arrayify@1.0.0, arrayify@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/arrayify/-/arrayify-1.0.0.tgz#f06a98235b8ef14ca1995992411a9fefb4e49cfc"
 
-arrify@1.0.1, arrify@^1.0.0, arrify@^1.0.1:
+arrify@^1.0.0, arrify@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/arrify/-/arrify-1.0.1.tgz#898508da2226f380df904728456849c1501a4b0d"
 
@@ -762,6 +758,12 @@ doctrine@^2.0.0, doctrine@^2.0.2:
   dependencies:
     esutils "^2.0.2"
 
+doctrine@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/doctrine/-/doctrine-2.1.0.tgz#5cd01fc101621b42c4cd7f5d1a66243716d3f39d"
+  dependencies:
+    esutils "^2.0.2"
+
 duplexer3@^0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/duplexer3/-/duplexer3-0.1.4.tgz#ee01dd1cac0ed3cbc7fdbea37dc0a8f1ce002ce2"
@@ -975,6 +977,48 @@ eslint@4.13.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
+eslint@^4.0.0:
+  version "4.17.0"
+  resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.17.0.tgz#dc24bb51ede48df629be7031c71d9dc0ee4f3ddf"
+  dependencies:
+    ajv "^5.3.0"
+    babel-code-frame "^6.22.0"
+    chalk "^2.1.0"
+    concat-stream "^1.6.0"
+    cross-spawn "^5.1.0"
+    debug "^3.1.0"
+    doctrine "^2.1.0"
+    eslint-scope "^3.7.1"
+    eslint-visitor-keys "^1.0.0"
+    espree "^3.5.2"
+    esquery "^1.0.0"
+    esutils "^2.0.2"
+    file-entry-cache "^2.0.0"
+    functional-red-black-tree "^1.0.1"
+    glob "^7.1.2"
+    globals "^11.0.1"
+    ignore "^3.3.3"
+    imurmurhash "^0.1.4"
+    inquirer "^3.0.6"
+    is-resolvable "^1.0.0"
+    js-yaml "^3.9.1"
+    json-stable-stringify-without-jsonify "^1.0.1"
+    levn "^0.3.0"
+    lodash "^4.17.4"
+    minimatch "^3.0.2"
+    mkdirp "^0.5.1"
+    natural-compare "^1.4.0"
+    optionator "^0.8.2"
+    path-is-inside "^1.0.2"
+    pluralize "^7.0.0"
+    progress "^2.0.0"
+    require-uncached "^1.0.3"
+    semver "^5.3.0"
+    strip-ansi "^4.0.0"
+    strip-json-comments "~2.0.1"
+    table "^4.0.1"
+    text-table "~0.2.0"
+
 eslint@^4.15.0:
   version "4.15.0"
   resolved "https://registry.yarnpkg.com/eslint/-/eslint-4.15.0.tgz#89ab38c12713eec3d13afac14e4a89e75ef08145"
@@ -1098,9 +1142,28 @@ execa-pro@1.0.2:
     execa "0.8.0"
     p-map-series "1.0.0"
 
+execa-pro@1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/execa-pro/-/execa-pro-1.0.3.tgz#903301a5e0b55e05b6ddef0792cfedae2ff6df58"
+  dependencies:
+    execa "0.9.0"
+    p-map-series "1.0.0"
+
 execa@0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.8.0.tgz#d8d76bbc1b55217ed190fd6dd49d3c774ecfc8da"
+  dependencies:
+    cross-spawn "^5.0.1"
+    get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
+execa@0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-0.9.0.tgz#adb7ce62cf985071f60580deb4a88b9e34712d01"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
@@ -1496,32 +1559,29 @@ hawk@~6.0.2:
     hoek "4.x.x"
     sntp "2.x.x"
 
-hela-config-tunnckocore@2.2.34:
-  version "2.2.34"
-  resolved "https://registry.yarnpkg.com/hela-config-tunnckocore/-/hela-config-tunnckocore-2.2.34.tgz#eb0df8defe7697de9bbef4f812475f7ad40a4e79"
+hela-config-tunnckocore@2.2.42:
+  version "2.2.42"
+  resolved "https://registry.yarnpkg.com/hela-config-tunnckocore/-/hela-config-tunnckocore-2.2.42.tgz#6de0c6aa9798013da87df579a689b3b875d8527b"
   dependencies:
     all-contributors-cli "4.10.1"
     gitcommit "0.2.4"
     is-ci "1.1.0"
     new-release "2.1.5"
     nyc "11.4.1"
-    prettier "1.10.1"
-    prettier-eslint "8.7.3"
+    prettier "1.10.2"
+    prettier-eslint "8.8.1"
     prettier-eslint-cli "4.7.0"
     rimraf "2.6.2"
-    semver "5.4.1"
+    semver "5.5.0"
 
-hela@1.3.14:
-  version "1.3.14"
-  resolved "https://registry.yarnpkg.com/hela/-/hela-1.3.14.tgz#ea7888369d7d2cc5bf61cc5fef08120f5f6bf8f0"
+hela@2.0.8:
+  version "2.0.8"
+  resolved "https://registry.yarnpkg.com/hela/-/hela-2.0.8.tgz#0503a6352715bb0eccea0d4f5239e3a1b4cddef6"
   dependencies:
-    "@std/esm" "0.12.0"
-    "@tunnckocore/pretty-config" "0.2.2"
-    arrify "1.0.1"
-    execa "0.8.0"
-    isobject "3.0.1"
+    "@tunnckocore/pretty-config" "0.5.1"
+    arrayify "1.0.0"
+    execa-pro "1.0.3"
     mri "1.1.0"
-    p-map-series "1.0.0"
     resolve-plugins-sync "1.1.4"
 
 hoek@4.x.x:
@@ -1839,10 +1899,6 @@ isexe@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/isexe/-/isexe-2.0.0.tgz#e8fbf374dc556ff8947a10dcb0572d633f2cfa10"
 
-isobject@3.0.1:
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
-
 isobject@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-2.1.0.tgz#f065561096a3f1da2ef46272f815c840d87e0c89"
@@ -1911,7 +1967,7 @@ js-tokens@^3.0.0, js-tokens@^3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/js-tokens/-/js-tokens-3.0.2.tgz#9866df395102130e38f7f996bceb65443209c25b"
 
-js-yaml@3.10.0, js-yaml@^3.9.1:
+js-yaml@^3.10.0, js-yaml@^3.9.1:
   version "3.10.0"
   resolved "https://registry.yarnpkg.com/js-yaml/-/js-yaml-3.10.0.tgz#2e78441646bd4682e963f22b6e92823c309c62dc"
   dependencies:
@@ -1925,6 +1981,10 @@ jsbn@~0.1.0:
 jsesc@^1.3.0:
   version "1.3.0"
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-1.3.0.tgz#46c3fec8c1892b12b0833db9bc7622176dbab34b"
+
+json-6@^0.1.128:
+  version "0.1.128"
+  resolved "https://registry.yarnpkg.com/json-6/-/json-6-0.1.128.tgz#0c52ddf38af9bd2d8ca5fdb402fc0e70776ccbf2"
 
 json-schema-traverse@^0.3.0:
   version "0.3.1"
@@ -2500,13 +2560,13 @@ performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
 
-pify@3.0.0, pify@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
-
 pify@^2.0.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/pify/-/pify-2.3.0.tgz#ed141a6ac043a849ea588498e7dca8b15330e90c"
+
+pify@^3.0.0:
+  version "3.0.0"
+  resolved "https://registry.yarnpkg.com/pify/-/pify-3.0.0.tgz#e5a4acd2c101fdf3d9a4d07f0dbc4db49dd28176"
 
 pinkie-promise@^2.0.0:
   version "2.0.1"
@@ -2563,7 +2623,24 @@ prettier-eslint-cli@4.7.0:
     rxjs "^5.3.0"
     yargs "10.0.3"
 
-prettier-eslint@8.7.3, prettier-eslint@^8.5.0:
+prettier-eslint@8.8.1:
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-8.8.1.tgz#38505163274742f2a0b31653c39e40f37ebd07da"
+  dependencies:
+    babel-runtime "^6.26.0"
+    common-tags "^1.4.0"
+    dlv "^1.1.0"
+    eslint "^4.0.0"
+    indent-string "^3.2.0"
+    lodash.merge "^4.6.0"
+    loglevel-colored-level-prefix "^1.0.0"
+    prettier "^1.7.0"
+    pretty-format "^22.0.3"
+    require-relative "^0.8.7"
+    typescript "^2.5.1"
+    typescript-eslint-parser "^11.0.0"
+
+prettier-eslint@^8.5.0:
   version "8.7.3"
   resolved "https://registry.yarnpkg.com/prettier-eslint/-/prettier-eslint-8.7.3.tgz#244c1e1e36eb84ddc336730a667b05b97439a998"
   dependencies:
@@ -2580,7 +2657,11 @@ prettier-eslint@8.7.3, prettier-eslint@^8.5.0:
     typescript "^2.5.1"
     typescript-eslint-parser "^11.0.0"
 
-prettier@1.10.1, prettier@^1.7.0:
+prettier@1.10.2:
+  version "1.10.2"
+  resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.2.tgz#1af8356d1842276a99a5b5529c82dd9e9ad3cc93"
+
+prettier@^1.7.0:
   version "1.10.1"
   resolved "https://registry.yarnpkg.com/prettier/-/prettier-1.10.1.tgz#01423fea6957ea23618d37d339ef0e7f7c967fc6"
 
