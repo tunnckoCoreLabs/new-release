@@ -27,7 +27,7 @@
     "new-release": "./src/cli.js"
   },
   "dependencies": {
-    "detect-next-version": "1.1.6",
+    "detect-next-version": "1.1.7",
     "execa-pro": "1.0.2",
     "is-ci": "1.1.0",
     "latest-version": "3.1.0",
