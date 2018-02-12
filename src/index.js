@@ -3,6 +3,7 @@
  * @license Apache-2.0
  */
 
+const fs = require('fs')
 const path = require('path')
 const semver = require('semver')
 const latestVersion = require('latest-version')
@@ -13,10 +14,28 @@ const detectNext = require('detect-next-version')
 module.exports = { prepublish, publish }
 
 /**
+ * Get package.json of current working directory
  *
- * @param {*} dir
+ * @param {string} cwd
+ * @returns
  */
+async function readCwdPackage (cwd) {
+  const fp = path.join(cwd, 'package.json')
+  return new Promise((resolve, reject) => {
+    fs.readFile(fp, 'utf8', (e, res) => {
+      if (e) {
+        reject(e)
+      } else {
+        resolve(JSON.parse(res))
+      }
+    })
+  })
+}
 
+/**
+ *
+ * @param {string} dir
+ */
 async function prepublish (dir) {
   const commits = await parseGitLog.promise(dir)
 
@@ -32,12 +51,11 @@ async function prepublish (dir) {
 
 /**
  *
- * @param {*} increment
- * @param {*} cwd
+ * @param {string} increment
+ * @param {string} cwd
  */
-
 async function getNextVersion (increment, cwd) {
-  const name = path.basename(cwd)
+  const { name } = await readCwdPackage(cwd)
   const currentVersion = await latestVersion(name)
   const nextVersion = semver.inc(currentVersion, increment)
 
@@ -46,9 +64,8 @@ async function getNextVersion (increment, cwd) {
 
 /**
  *
- * @param {*} nextVersion
+ * @param {string} nextVersion
  */
-
 function publish (nextVersion) {
   return shell(
     [
