@@ -11,7 +11,7 @@
     "precommit": "yarn hela precommit",
     "commit": "yarn hela commit",
     "prepublishOnly": "yarn hela protect",
-    "release": "./src/cli.js --ci"
+    "release": "./src/cli.js"
   },
   "license": "Apache-2.0",
   "licenseStart": 2017,
