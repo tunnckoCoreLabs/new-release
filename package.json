@@ -27,7 +27,7 @@
     "new-release": "./src/cli.js"
   },
   "dependencies": {
-    "detect-next-version": "1.1.7",
+    "detect-next-version": "2.0.2",
     "execa-pro": "1.0.2",
     "is-ci": "1.1.0",
     "latest-version": "3.1.0",
@@ -36,7 +36,7 @@
     "semver": "5.5.0"
   },
   "devDependencies": {
-    "eslint": "4.13.0",
+    "eslint": "4.17.0",
     "eslint-config-tunnckocore": "0.3.0",
     "hela": "2.0.8",
     "hela-config-tunnckocore": "2.2.42",

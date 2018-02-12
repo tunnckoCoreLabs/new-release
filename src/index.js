@@ -44,7 +44,7 @@ async function prepublish (dir) {
   // TODO: respect all commits after the last tag,
   // not only the latest one (in some cases it is need!)
   const { contents, cwd } = commits[0]
-  const { increment } = detectNext(contents, true)
+  const increment = detectNext(contents)
 
   if (!increment) return null
 
