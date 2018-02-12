@@ -14,7 +14,7 @@ const { prepublish, publish } = require('./index.js')
 const argv = minimist(process.argv.slice(2), {
   default: {
     cwd: process.cwd(),
-    ci: false,
+    ci: true,
   },
 })
 
