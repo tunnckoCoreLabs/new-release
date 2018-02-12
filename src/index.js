@@ -11,7 +11,7 @@ const { shell } = require('execa-pro')
 const parseGitLog = require('parse-git-log')
 const detectNext = require('detect-next-version')
 
-module.exports = { prepublish, publish }
+module.exports = { prepublish, publish, getVersions }
 
 /**
  * Get package.json of current working directory
@@ -21,7 +21,7 @@ module.exports = { prepublish, publish }
  */
 async function readCwdPackage (cwd) {
   const fp = path.join(cwd, 'package.json')
-  return new Promise((resolve, reject) => {
+  const promise = new Promise((resolve, reject) => {
     fs.readFile(fp, 'utf8', (e, res) => {
       if (e) {
         reject(e)
@@ -30,6 +30,8 @@ async function readCwdPackage (cwd) {
       }
     })
   })
+
+  return promise.then(JSON.parse)
 }
 
 /**
@@ -46,20 +48,29 @@ async function prepublish (dir) {
 
   if (!increment) return null
 
-  return getNextVersion(increment, cwd)
+  return getVersions(increment, { cwd })
 }
 
 /**
  *
  * @param {string} increment
- * @param {string} cwd
+ * @param {object} options
  */
-async function getNextVersion (increment, cwd) {
-  const { name } = await (readCwdPackage(cwd).then(JSON.parse))
-  const currentVersion = await latestVersion(name)
-  const nextVersion = semver.inc(currentVersion, increment)
+async function getVersions (increment, { cwd, name }) {
+  let packageName = null
 
-  return { currentVersion, nextVersion }
+  if (cwd) {
+    packageName = (await readCwdPackage(cwd)).name
+  } else if (name) {
+    packageName = name
+  } else {
+    throw new Error('new-release: getVersions expect options.cwd or options.name')
+  }
+
+  const lastVersion = await latestVersion(packageName)
+  const nextVersion = semver.inc(lastVersion, increment)
+
+  return { lastVersion, nextVersion }
 }
 
 /**
