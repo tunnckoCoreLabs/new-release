@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "detect-next-version": "2.0.2",
-    "execa-pro": "1.0.7",
+    "execa-pro": "1.0.8",
     "is-ci": "1.2.0",
     "latest-version": "4.0.0",
     "minimist": "1.2.0",
