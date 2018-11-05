@@ -77,6 +77,15 @@
   version "0.20.0"
   resolved "https://registry.yarnpkg.com/@std/esm/-/esm-0.20.0.tgz#658cb32e3b163f20b7d9f29a78987041068b1182"
 
+"@tunnckocore/execa@>= 0.1.0 < 3":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@tunnckocore/execa/-/execa-2.1.1.tgz#4123475347bb9131ef93e0cdd3511c3f23c7419f"
+  dependencies:
+    esm "^3.0.84"
+    execa "^1.0.0"
+    p-map-series "^1.0.0"
+    split-cmd "^1.0.0"
+
 "@tunnckocore/pretty-config@0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@tunnckocore/pretty-config/-/pretty-config-0.5.1.tgz#e8cc45cf28ec5c74245f857ae317955d483a2879"
@@ -1204,6 +1213,10 @@ eslint@^4.5.0:
     table "^4.0.1"
     text-table "~0.2.0"
 
+esm@^3.0.84:
+  version "3.0.84"
+  resolved "https://registry.yarnpkg.com/esm/-/esm-3.0.84.tgz#bb108989f4673b32d4f62406869c28eed3815a63"
+
 espree@^3.5.2:
   version "3.5.2"
   resolved "https://registry.yarnpkg.com/espree/-/espree-3.5.2.tgz#756ada8b979e9dcfcdb30aad8d1a9304a905e1ca"
@@ -1263,13 +1276,11 @@ execa-pro@1.0.3:
     execa "0.9.0"
     p-map-series "1.0.0"
 
-execa-pro@1.0.8:
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/execa-pro/-/execa-pro-1.0.8.tgz#9e5a901934a66a21425438974d5dcef9150303d3"
+execa-pro@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/execa-pro/-/execa-pro-1.1.1.tgz#e4a0438096012dcac66d4dcc89e803e98d7852e6"
   dependencies:
-    execa "1.0.0"
-    p-map-series "1.0.0"
-    split-cmd "^1.0.0"
+    "@tunnckocore/execa" ">= 0.1.0 < 3"
 
 execa@0.8.0:
   version "0.8.0"
@@ -1295,24 +1306,24 @@ execa@0.9.0:
     signal-exit "^3.0.0"
     strip-eof "^1.0.0"
 
-execa@1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
-  dependencies:
-    cross-spawn "^6.0.0"
-    get-stream "^4.0.0"
-    is-stream "^1.1.0"
-    npm-run-path "^2.0.0"
-    p-finally "^1.0.0"
-    signal-exit "^3.0.0"
-    strip-eof "^1.0.0"
-
 execa@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/execa/-/execa-0.7.0.tgz#944becd34cc41ee32a63a9faf27ad5a65fc59777"
   dependencies:
     cross-spawn "^5.0.1"
     get-stream "^3.0.0"
+    is-stream "^1.1.0"
+    npm-run-path "^2.0.0"
+    p-finally "^1.0.0"
+    signal-exit "^3.0.0"
+    strip-eof "^1.0.0"
+
+execa@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/execa/-/execa-1.0.0.tgz#c6236a5bb4df6d6f15e88e7f017798216749ddd8"
+  dependencies:
+    cross-spawn "^6.0.0"
+    get-stream "^4.0.0"
     is-stream "^1.1.0"
     npm-run-path "^2.0.0"
     p-finally "^1.0.0"
@@ -2774,7 +2785,7 @@ p-locate@^2.0.0:
   dependencies:
     p-limit "^1.1.0"
 
-p-map-series@1.0.0:
+p-map-series@1.0.0, p-map-series@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/p-map-series/-/p-map-series-1.0.0.tgz#bf98fe575705658a9e1351befb85ae4c1f07bdca"
   dependencies:
