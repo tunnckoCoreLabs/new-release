@@ -86,6 +86,14 @@
     p-map-series "^1.0.0"
     split-cmd "^1.0.0"
 
+"@tunnckocore/package-json@^1.0.1":
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/@tunnckocore/package-json/-/package-json-1.0.1.tgz#dd9fe7ad302c84a9352682b03e583613348097ab"
+  dependencies:
+    axios "^0.18.0"
+    esm "^3.0.84"
+    parse-package-name "^0.1.0"
+
 "@tunnckocore/pretty-config@0.5.1":
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/@tunnckocore/pretty-config/-/pretty-config-0.5.1.tgz#e8cc45cf28ec5c74245f857ae317955d483a2879"
@@ -314,6 +322,13 @@ aws-sign2@~0.7.0:
 aws4@^1.6.0:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.6.0.tgz#83ef5ca860b2b32e4a0deedee8c771b9db57471e"
+
+axios@^0.18.0:
+  version "0.18.0"
+  resolved "http://registry.npmjs.org/axios/-/axios-0.18.0.tgz#32d53e4851efdc0a11993b6cd000789d70c05102"
+  dependencies:
+    follow-redirects "^1.3.0"
+    is-buffer "^1.1.5"
 
 axobject-query@^0.1.0:
   version "0.1.0"
@@ -613,6 +628,12 @@ collect-mentions@0.1.1:
   dependencies:
     mentions-regex "2.0.3"
 
+collect-mentions@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/collect-mentions/-/collect-mentions-1.0.2.tgz#30734fcb33cbf8999cf7fd6d9c3133045f0b4dcc"
+  dependencies:
+    mentions-regex "^2.0.3"
+
 color-convert@^1.9.0:
   version "1.9.1"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-1.9.1.tgz#c1261107aeb2f294ebffec9ed9ecad529a6097ed"
@@ -745,15 +766,15 @@ debug-log@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/debug-log/-/debug-log-1.0.1.tgz#2307632d4c04382b8df8a32f70b895046d52745f"
 
-debug@^2.6.8:
-  version "2.6.9"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
+debug@=3.1.0, debug@^3.0.1, debug@^3.1.0:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
   dependencies:
     ms "2.0.0"
 
-debug@^3.0.1, debug@^3.1.0:
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/debug/-/debug-3.1.0.tgz#5bb5a0672628b64149566ba16819e61518c67261"
+debug@^2.6.8:
+  version "2.6.9"
+  resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
   dependencies:
     ms "2.0.0"
 
@@ -825,6 +846,15 @@ detect-next-version@2.0.2:
   resolved "https://registry.yarnpkg.com/detect-next-version/-/detect-next-version-2.0.2.tgz#22b56b98837aea0d350e787c43975be4a7e05eab"
   dependencies:
     parse-commit-message "1.1.2"
+
+detect-next-version@3.0.1:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/detect-next-version/-/detect-next-version-3.0.1.tgz#ab1babe389e72f1e15703210828d4c9c164004df"
+  dependencies:
+    "@tunnckocore/package-json" "^1.0.1"
+    esm "^3.0.84"
+    parse-commit-message "1.1.2"
+    recommended-bump "^1.2.0"
 
 dezalgo@^1.0.3:
   version "1.0.3"
@@ -1483,6 +1513,12 @@ flat-cache@^1.2.1:
 fn-name@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/fn-name/-/fn-name-2.0.1.tgz#5214d7537a4d06a4a301c0cc262feb84188002e7"
+
+follow-redirects@^1.3.0:
+  version "1.5.9"
+  resolved "https://registry.yarnpkg.com/follow-redirects/-/follow-redirects-1.5.9.tgz#c9ed9d748b814a39535716e531b9196a845d89c6"
+  dependencies:
+    debug "=3.1.0"
 
 for-in@^1.0.1:
   version "1.0.2"
@@ -2473,7 +2509,7 @@ mem@^1.1.0:
   dependencies:
     mimic-fn "^1.0.0"
 
-mentions-regex@2.0.3:
+mentions-regex@2.0.3, mentions-regex@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/mentions-regex/-/mentions-regex-2.0.3.tgz#442717a0048e53c2d2e2ae5e63a4e54a55ca9603"
 
@@ -2826,6 +2862,12 @@ parse-commit-message@1.1.2:
     arrayify "1.0.0"
     collect-mentions "0.1.1"
 
+parse-commit-message@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/parse-commit-message/-/parse-commit-message-2.1.4.tgz#b9ee527f9fff6b181bcdd7d22363a12159284ec9"
+  dependencies:
+    collect-mentions "^1.0.1"
+
 parse-git-log@0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/parse-git-log/-/parse-git-log-0.2.1.tgz#1cc8c63c8390a2fdbf01368255f43937f8a23ee1"
@@ -2849,6 +2891,10 @@ parse-json@^2.2.0:
   resolved "https://registry.yarnpkg.com/parse-json/-/parse-json-2.2.0.tgz#f480f40434ef80741f8469099f8dea18f55a4dc9"
   dependencies:
     error-ex "^1.2.0"
+
+parse-package-name@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/parse-package-name/-/parse-package-name-0.1.0.tgz#3f44dd838feb4c2be4bf318bae4477d7706bade4"
 
 parse-passwd@^1.0.0:
   version "1.0.0"
@@ -3144,6 +3190,13 @@ readable-stream@^2.0.4, readable-stream@^2.1.5, readable-stream@^2.2.2:
     safe-buffer "~5.1.1"
     string_decoder "~1.0.3"
     util-deprecate "~1.0.1"
+
+recommended-bump@^1.2.0:
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/recommended-bump/-/recommended-bump-1.2.0.tgz#50eb5a22e0a6c04e78a9dad133063724bfa83dd7"
+  dependencies:
+    esm "^3.0.84"
+    parse-commit-message "^2.1.4"
 
 regenerator-runtime@^0.11.0:
   version "0.11.0"
