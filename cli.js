@@ -18,7 +18,15 @@ function interop(x) {
   return x;
 }
 
-const mod = esmRequire(path.join(__dirname, 'src', 'cli.js'));
+const mod = esmRequire(
+  path.join(
+    __dirname,
+    'node_modules',
+    '@tunnckocore/release-cli',
+    'src',
+    'cli.js',
+  ),
+);
 const cli = interop(mod);
 
 const argv = parser(proc.argv.slice(2), {
