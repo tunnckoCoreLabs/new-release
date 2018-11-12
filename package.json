@@ -9,14 +9,15 @@
     "test": "nyc asia",
     "commit": "yarn lint && yarn test && yarn dry",
     "dry": "git add -A && git status --porcelain && gitcommit -sS",
-    "release": "tunnckocore-release"
+    "release": "node cli.js"
   },
   "engines": {
     "node": "^8.11.0 || >=10.13.0"
   },
   "dependencies": {
     "@tunnckocore/release-cli": "^1.3.1",
-    "esm": "^3.0.84"
+    "esm": "^3.0.84",
+    "mri": "^1.1.1"
   },
   "devDependencies": {
     "@tunnckocore/config": "^1.0.2",
