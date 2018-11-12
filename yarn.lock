@@ -153,10 +153,10 @@
     esm "^3.0.84"
     parse-package-name "^0.1.0"
 
-"@tunnckocore/release-cli@^1.2.0":
-  version "1.2.0"
-  resolved "https://registry.yarnpkg.com/@tunnckocore/release-cli/-/release-cli-1.2.0.tgz#b425c9f157cc9287e8d02cd79cd8de28a0509d77"
-  integrity sha512-lknALKNRghrDuBH9d/2nsH/T0hI/00hcFUr1vbd/can+Vt4x2lnS5Yxj5+vaQkMzsf/VK2tQkfIsvo55CbqeiA==
+"@tunnckocore/release-cli@^1.3.1":
+  version "1.3.1"
+  resolved "https://registry.yarnpkg.com/@tunnckocore/release-cli/-/release-cli-1.3.1.tgz#b01ce2b69df62fd64d4d3e91fe369f83bb36fad8"
+  integrity sha512-SOR7TCDoTBc2j8AICTaT5MWfuLGg8Ah/h1pVWaqwwXHdE+/V4eBCRRg/8L22SE4n7C8sWQ9uOw5xWTTc8O58qg==
   dependencies:
     "@tunnckocore/execa" "^2.1.2"
     "@tunnckocore/package-json" "^1.0.1"
