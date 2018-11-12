@@ -1,68 +1,70 @@
 {
   "name": "new-release",
-  "version": "0.0.0-semantic-release",
-  "description": "A stable alternative to [semantic-release][]. Only handles NPM publishing and nothing more. For creating GitHub releases use the Semantic Release GitHub App",
-  "repository": "tunnckoCore/new-release",
-  "author": "Charlike Mike Reagent (https://i.am.charlike.online)",
-  "nspId": "12907c4a-78a2-41d7-a430-49396e68b9cd",
-  "main": "./src/index.js",
-  "scripts": {
-    "test": "NODE_ENV=test yarn hela test",
-    "precommit": "yarn hela precommit",
-    "commit": "yarn hela commit",
-    "prepublishOnly": "yarn hela protect",
-    "release": "./src/cli.js"
-  },
+  "description": "[MIRROR] Publish project to NPM following Conventional Commits specification and SemVer. Uses git-commits-since for detecting git commits since last SemVer tag and detect-next-version for what next version bump should be.",
   "license": "Apache-2.0",
-  "licenseStart": 2017,
-  "engines": {
-    "node": ">=8",
-    "npm": ">=5",
-    "yarn": ">=1"
+  "licenseStart": "2017",
+  "scripts": {
+    "docs": "verb",
+    "lint": "eslint '**/*.js' --cache --fix --quiet --format codeframe",
+    "test": "nyc asia",
+    "commit": "yarn lint && yarn test && yarn dry",
+    "dry": "git add -A && git status --porcelain && gitcommit -sS",
+    "release": "tunnckocore-release"
   },
-  "files": [
-    "src/"
-  ],
-  "bin": {
-    "new-release": "./src/cli.js"
+  "engines": {
+    "node": "^8.11.0 || >=10.13.0"
   },
   "dependencies": {
-    "detect-next-version": "3.0.1",
-    "execa-pro": "1.1.1",
-    "is-ci": "1.2.1",
-    "latest-version": "4.0.0",
-    "minimist": "1.2.0",
-    "parse-git-log": "0.2.1",
-    "semver": "5.6.0"
+    "@tunnckocore/release-cli": "^1.2.0",
+    "esm": "^3.0.84"
   },
   "devDependencies": {
-    "eslint": "5.9.0",
-    "eslint-config-tunnckocore": "0.3.0",
-    "hela": "2.0.10",
-    "hela-config-tunnckocore": "2.2.45",
-    "mukla": "0.4.9"
+    "@tunnckocore/config": "^1.0.2",
+    "asia": "^0.19.7"
   },
-  "keywords": [
-    "automation"
+  "files": [
+    "src",
+    "index.js",
+    "cli.js"
   ],
+  "bin": {
+    "release": "cli.js",
+    "new-release": "cli.js",
+    "tunnckocore-release": "cli.js"
+  },
+  "main": "index.js",
+  "module": "src/index.js",
+  "typings": "src/index.d.ts",
+  "version": "5.0.0",
+  "repository": "tunnckoCoreLabs/new-release",
+  "homepage": "https://github.com/tunnckoCore/release-cli",
+  "author": "Charlike Mike Reagent (https://tunnckocore.com)",
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  },
+  "renovate": {
+    "extends": "tunnckocore"
+  },
   "verb": {
     "run": true,
     "toc": {
       "render": true,
       "method": "preWrite",
-      "maxdepth": 3
+      "maxdepth": 4
     },
     "layout": "empty",
     "tasks": [
       "readme"
     ],
     "related": {
+      "maxWords": 10,
       "list": [
-        "dush",
-        "p-map-series",
-        "execa",
-        "hela",
-        "mri"
+        "gitcommit",
+        "git-commits-since",
+        "detect-next-version",
+        "recommended-bump",
+        "@tunnckocore/config"
       ],
       "highlight": "execa"
     },
@@ -70,7 +72,7 @@
       "reflinks": true
     },
     "reflinks": [
-      "hela",
+      "new-release",
       "semantic-release"
     ]
   }
