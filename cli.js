@@ -2,7 +2,6 @@
 
 'use strict';
 
-const path = require('path');
 const proc = require('process');
 const parser = require('mri');
 const esmLoader = require('esm');
@@ -18,15 +17,7 @@ function interop(x) {
   return x;
 }
 
-const mod = esmRequire(
-  path.join(
-    __dirname,
-    'node_modules',
-    '@tunnckocore/release-cli',
-    'src',
-    'cli.js',
-  ),
-);
+const mod = esmRequire('@tunnckocore/release-cli/src/cli');
 const cli = interop(mod);
 
 const argv = parser(proc.argv.slice(2), {
