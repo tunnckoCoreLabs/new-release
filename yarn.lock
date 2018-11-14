@@ -2140,9 +2140,9 @@ p-try@^1.0.0:
   integrity sha1-y8ec26+P1CKOE/Yh8rGiN8GyB7M=
 
 parse-commit-message@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/parse-commit-message/-/parse-commit-message-3.2.0.tgz#8065d006e9e4b273889130067ae435b8986508a6"
-  integrity sha512-LzkHT+I2cG+3v0iGnMNPda4qdZoTjiz40rOEdo7pd7gpE4YHXFDvF4dj2LuoMQX7Ykb3WlKZBfwLSKFHASvjGw==
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/parse-commit-message/-/parse-commit-message-3.2.1.tgz#2c04524469df5c7f8d952205a112ba10fe64554b"
+  integrity sha512-Qis/J5olChQS7UG/sPDc4fYX/GQvc33a1kxwq+Md42CSCexczXA1C4IR3rOziriYxYhptyBdaT2r7hs897UTLQ==
   dependencies:
     collect-mentions "^1.0.2"
     dedent "^0.7.0"
